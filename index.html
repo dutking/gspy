@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GenomeSpy</title>
+        <meta charset="UTF-8" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@genome-spy/app@0.51.x/dist/style.css"
+        />
+    </head>
+
+    <body>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@genome-spy/app@0.51.x/dist/index.js"
+        ></script>
+
+        <script>
+            const specUrl = "./ASCAT/ascat.json"
+            if (specUrl) {
+                genomeSpyApp.embed(document.body, specUrl)
+            } else {
+                document.body.innerHTML = `
+                <p style="color: firebrick">No 'spec' url parameter defined!</p>
+                <p>Try the simple <a href="?spec=simple/bar.json">bar plot spec</a>, for example!</p>`
+            }
+        </script>
+    </body>
+</html>
